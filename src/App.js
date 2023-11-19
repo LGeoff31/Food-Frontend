@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import { TextField, Button } from "@mui/material";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import CreateRoom from "./pages/CreateRoom";
+import HomePage from "./pages/HomePage";
+import RoomLobby from "./pages/RoomLobby";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/create-room" element={<CreateRoom />} />
+          <Route path="/lobby" element={<RoomLobby />} />
+        </Routes>
+      </BrowserRouter>
+      {/* // <div className="App">
+    //   <HomePage />
+    // </div> */}
+    </>
   );
 }
 
